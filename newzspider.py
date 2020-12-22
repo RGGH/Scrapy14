@@ -1,4 +1,6 @@
-                              |___/    
+#+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+#|r|e|d|a|n|d|g|r|e|e|n|.|c|o|.|u|k|
+#+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
 import scrapy
 from items import Article
@@ -10,7 +12,7 @@ class newzspider(scrapy.Spider):
     name = 'newzspider'
     allowed_domains = ['theguardian.com']
     start_urls = ['https://www.theguardian.com/uk/']
-    custom_settings = {'FEEDS':{'results1.csv':{'format':'csv'}}}
+    custom_settings = {'FEEDS':{'results1.csv':{'format':'csv'}}} # replace with MySQL
 
     def parse(self, response):
 
@@ -18,19 +20,17 @@ class newzspider(scrapy.Spider):
         links = response.xpath('//*[@class="most-popular__item tone-news--most-popular fc-item--pillar-news"]/a/@href')
         for link in links:
             url = (link.get())
-            yield Request(url, callback=self.parse_detail)            
-#            article = Article()
-#            article['link'] = link.get()
-#            yield article
+            yield Request(url, callback=self.parse_detail, cb_kwargs={'url': url})            
 
-    def parse_detail(self, response):
+    def parse_detail(self, response, url):
         
         title = response.xpath('//*[@itemprop="headline"]/text()').get()
         story = response.xpath('//p/text()').getall()
-        yield {'title' : title, 'story' : story}
+        url = url
+
+        yield {'title' : title, 'story' : story, 'url' : url}
 
 # main driver
-
 if __name__ == '__main__':
     process = CrawlerProcess()
     process.crawl(newzspider)
