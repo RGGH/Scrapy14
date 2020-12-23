@@ -5,6 +5,9 @@ Scraping News Stories - Multiple Sources
 
 ### Multiple spiders using ONE items.py with MySQL database
 
-https://github.com/RGGH/Misc/issues/2#issue-774080568
+![Curl Scrapy](https://user-images.githubusercontent.com/62441426/103042367-43708280-4571-11eb-9d4e-783bab6a7eb7.png)
 
-https://github.com/RGGH/Misc/issues/3#issue-774080750
+![Curl from Browser](https://user-images.githubusercontent.com/62441426/103042322-276ce100-4571-11eb-9c21-b30c26f08598.png)
+
+
+
