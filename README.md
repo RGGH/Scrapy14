@@ -3,7 +3,7 @@ Scraping News Stories - Multiple Sources
 
 #### Example for YouTube (https://www.youtube.com/c/DrPiCode)
 
-#### Multiple spiders using ONE items.py with MySQL database
+#### Objective : Multiple spiders using ONE items.py with MySQL database for consistent data 
 
 ## Add new database to MySQL
 
