@@ -11,7 +11,7 @@ Scraping News Stories - Multiple Sources
 
 #### Objective : Multiple spiders using ONE items.py with MySQL database for consistent data 
 
-### Check all potential news sites in Scrapy shell first
+#### Check all potential news sites in Scrapy shell first
 
 #### Use scrapy shell's fetch (url, headers={})
 
