@@ -3,16 +3,19 @@
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
 import scrapy
-from items import Article
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.response import open_in_browser
 from scrapy import Request
+import sys
+sys.path.insert(0,'..')
+from items import NewzzItem
 
 class newzspider(scrapy.Spider):
     name = 'newzspider'
     allowed_domains = ['theguardian.com']
     start_urls = ['https://www.theguardian.com/uk/']
-    custom_settings = {'FEEDS':{'results1.csv':{'format':'csv'}}} # replace with MySQL
+    
+    # custom_settings = {'FEEDS':{'results1.csv':{'format':'csv'}}} # replace with MySQL
 
     def parse(self, response):
 
