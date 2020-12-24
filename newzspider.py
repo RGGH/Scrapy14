@@ -4,18 +4,17 @@
 
 import scrapy
 from scrapy.crawler import CrawlerProcess
-from scrapy.utils.response import open_in_browser
 from scrapy import Request
+from scrapy.loader import ItemLoader
 import sys
 sys.path.insert(0,'..')
 from items import NewzzItem
 
 class newzspider(scrapy.Spider):
+
     name = 'newzspider'
     allowed_domains = ['theguardian.com']
     start_urls = ['https://www.theguardian.com/uk/']
-    
-    # custom_settings = {'FEEDS':{'results1.csv':{'format':'csv'}}} # replace with MySQL
 
     def parse(self, response):
 
@@ -26,15 +25,27 @@ class newzspider(scrapy.Spider):
             yield Request(url, callback=self.parse_detail, cb_kwargs={'url': url})            
 
     def parse_detail(self, response, url):
+    
+        items = NewzzItem()
         
         title = response.xpath('//*[@itemprop="headline"]/text()').get()
         story = response.xpath('//p/text()').getall()
         url = url
+        
+        items['title'] = title
+        items['story'] = story
+        items['url'] = url
+                     
+    #Todo : 
+    #publication
+    #author
 
-        yield {'title' : title, 'story' : story, 'url' : url}
+        yield items
 
 # main driver
 if __name__ == '__main__':
     process = CrawlerProcess()
     process.crawl(newzspider)
     process.start()
+    
+    
