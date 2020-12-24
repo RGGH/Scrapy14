@@ -27,7 +27,7 @@ class newzspider2(scrapy.Spider):
     'upgrade-insecure-requests': '1', 
     'user-agent': ' Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'}
     
-    #custom_settings = {'FEEDS':{'results2.csv':{'format':'csv'}}} # replace with MySQL
+    #custom_settings = {'FEEDS':{'results2.csv':{'format':'csv'}}}  # replace with MySQL
     
     def start_request (self):
         request = Request(start_urls, headers=headers, callback=self.parse)
