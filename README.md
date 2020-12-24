@@ -1,11 +1,13 @@
 # Scrapy14
 Scraping News Stories - Multiple Sources
 
-#### Example for YouTube (https://www.youtube.com/c/DrPiCode)
+## Plan : write 3 or more spiders - test with csv - then use pipelines to send items to database
+
+#### # Example for YouTube (https://www.youtube.com/c/DrPiCode) 
 
 #### Objective : Multiple spiders using ONE items.py with MySQL database for consistent data 
 
-## Add new database to MySQL
+### Add new database to MySQL
 
     sudo mysql -u root -p -h localhost
 
