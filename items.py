@@ -4,7 +4,6 @@
 
 import scrapy
 
-
 class NewzzItem(scrapy.Item):
 
     publication = scrapy.Field()
