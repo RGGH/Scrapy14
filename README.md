@@ -31,7 +31,7 @@ Scraping News Stories - Multiple Sources
     sys.path.insert(0,'..')
     from items import NewzzItem
     
-    https://github.com/RGGH/Scrapy14/issues/2#issue-774495224
+https://github.com/RGGH/Scrapy14/issues/2#issue-774495224
     
 ### Add new database to MySQL
 
