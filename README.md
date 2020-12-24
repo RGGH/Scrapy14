@@ -34,6 +34,12 @@ Scraping News Stories - Multiple Sources
 
 ### Plan the columns / fields for "items" to scrape
 
+### Also features a fix for scrapy & items 'module not found' error : 
+
+    import sys
+    sys.path.insert(0,'..')
+    from items import NewzzItem
+
 
 
 
