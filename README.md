@@ -31,7 +31,7 @@ Scraping News Stories - Multiple Sources
     sys.path.insert(0,'..')
     from items import NewzzItem
     
-https://github.com/RGGH/Scrapy14/issues/2#issue-774495224
+![Module not found error](https://user-images.githubusercontent.com/62441426/103097620-c3ddc480-45ff-11eb-9aad-726a12641564.gif)
     
 ### Add new database to MySQL
 
