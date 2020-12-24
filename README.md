@@ -1,6 +1,10 @@
 # Scrapy14
 Scraping News Stories - Multiple Sources
 
+- 'independent'
+- 'guardian'
+- 'express'
+
 ## Plan : write 3 or more spiders - test with csv - then use pipelines to send items to database
 
 #### # Example for YouTube (https://www.youtube.com/c/DrPiCode) 
