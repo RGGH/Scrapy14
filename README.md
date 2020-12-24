@@ -36,6 +36,8 @@ Scraping News Stories - Multiple Sources
 
 ### Also features a fix for scrapy & items 'module not found' error : 
 
+#### Add this with imports in each spider
+
     import sys
     sys.path.insert(0,'..')
     from items import NewzzItem
