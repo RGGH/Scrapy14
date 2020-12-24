@@ -11,17 +11,6 @@ Scraping News Stories - Multiple Sources
 
 #### Objective : Multiple spiders using ONE items.py with MySQL database for consistent data 
 
-### Add new database to MySQL
-
-    sudo mysql -u root -p -h localhost
-
-    DROP DATABASE IF EXISTS newz;
-    CREATE DATABASE newz;
-
-    GRANT ALL PRIVILEGES ON newz.* TO 'pi'@'localhost';
-
-    FLUSH PRIVILEGES;
-
 ### Check all potential news sites in Scrapy shell first
 
 #### Use scrapy shell's fetch (url, headers={})
@@ -41,6 +30,17 @@ Scraping News Stories - Multiple Sources
     import sys
     sys.path.insert(0,'..')
     from items import NewzzItem
+    
+### Add new database to MySQL
+
+    sudo mysql -u root -p -h localhost
+
+    DROP DATABASE IF EXISTS newz;
+    CREATE DATABASE newz;
+
+    GRANT ALL PRIVILEGES ON newz.* TO 'pi'@'localhost';
+
+    FLUSH PRIVILEGES;
 
 
 
