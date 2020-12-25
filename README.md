@@ -44,7 +44,9 @@ Scraping News Stories - Multiple Sources
 
     FLUSH PRIVILEGES;
 
+#### Allow remote connection to database
 
+    GRANT ALL PRIVILEGES ON newz.*  TO 'user1'@'%';
 
 
 
