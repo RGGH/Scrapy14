@@ -5,7 +5,9 @@ Scraping News Stories - Multiple Sources
 - 'guardian'
 - 'express'
 
-~~ Plan : write 3 or more spiders - test with csv - then use pipelines to send items to database ~~
+#### Todo : finish all selectors, investigate why pipelines only work running as "scrapy crawl spdiername" and not as "python3 spidername.py"
+
+~~Plan : write 3 or more spiders - test with csv - then use pipelines to send items to database ~~
 
 #### # Example for YouTube (https://www.youtube.com/c/DrPiCode) 
 
@@ -21,7 +23,7 @@ Scraping News Stories - Multiple Sources
 
 ![Curl Scrapy](https://user-images.githubusercontent.com/62441426/103042367-43708280-4571-11eb-9d4e-783bab6a7eb7.png)
 
-### Plan the columns / fields for "items" to scrape
+~~### Plan the columns / fields for "items" to scrape~~
 
 ### Also features a fix for scrapy & items 'module not found' error : 
 
