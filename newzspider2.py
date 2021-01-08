@@ -26,15 +26,14 @@ class newzspider2(scrapy.Spider):
     
         items = NewzzItem()
         
-        links = response.xpath("//a/@href").getall()
-    
-        # Just send the URL to INSERT MySQL initially to test if pipelines work
-        # use dummy values for others
-        for url in links[30:40]:
-            items['url'] = url
-            items['author'] = "author"
-            items['story'] = "story"
-            items['title'] = "title"
+        links = response.xpath('//a/@href')[30:35].getall()
+
+        for link in links[30:40]:
+            items['url'] = link
+            items['publication'] = 'express'
+            items['author'] = 'author'
+            items['story'] = link(text())
+            items['title'] = 'title'
             yield items
             
 
