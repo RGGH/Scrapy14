@@ -7,7 +7,7 @@ Scraping News Stories - Multiple Sources
 
 #### Todo : finish all selectors, investigate why pipelines only work running as "scrapy crawl spdiername" and not as "python3 spidername.py"
 
-~~Plan : write 3 or more spiders - test with csv - then use pipelines to send items to database ~~
+~~Plan : write 3 or more spiders - test with csv - then use pipelines to send items to database~~
 
 #### # Example for YouTube (https://www.youtube.com/c/DrPiCode) 
 
