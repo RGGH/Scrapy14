@@ -32,14 +32,18 @@ class newzspider(scrapy.Spider):
         story = response.xpath('//p/text()').getall()
         url = url
         
-        items['title'] = title
-        items['story'] = story
+        items['publication'] = self.allowed_domains[0]
+        
+        if title:
+            items['title'] = title
+        else:
+            items['title'] = 'no title'
+        items['publication'] = 'theguardian'    
+        items['author'] = 'author'
+        items['story'] = story[0]
         items['url'] = url
                      
     #Todo : 
-    #publication
-    #author
-
         yield items
 
 # main driver
