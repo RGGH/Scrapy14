@@ -53,3 +53,5 @@ Scraping News Stories - Multiple Sources
 
 
 #### More to follow - Also : visit my web scraping and automation site : https://redandgreen.co.uk/
+
+#### how to back up MySQL databse and restore : https://redandgreen.co.uk/mysql-backup-and-restore-for-scrapy-web-scraping/
