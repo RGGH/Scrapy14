@@ -14,6 +14,7 @@ class newzspider3(scrapy.Spider):
 
     name = 'newzspider3'
     start_urls = ['https://www.independent.co.uk/']
+    allowed_domains =["independent.co.uk"]
     headers={
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
     'accept-encoding': 'gzip,',
@@ -30,20 +31,49 @@ class newzspider3(scrapy.Spider):
         yield request
 
     def parse(self, response):
+        # use not contains to exclude voucher offers! 
+        links = response.xpath('//a[@class="title"][not(contains(@href,"https://www.independent.co.uk/vouchercodes"))]/@href')
+        for url in links:     
+            url = url.get()
+            print(url)
+            next_page = url
+            if next_page:
+                yield response.follow(next_page, headers=self.headers, callback=self.parse_details)
+        
+    def parse_details(self, response):
     
         items = NewzzItem()
         
-        links = response.xpath('//a/@href').getall()
+        try:
+            story = response.xpath('//p/text()').get()
+        except:
+            pass
+           
+        title = response.xpath('//h1/text()').get()
+            
+        print("\n")
+        print("######")
+        print(story)
+        url = response.url
+        print(url)
+        
+        items['publication'] = self.allowed_domains[0]
+        
+        if title:
+            items['title'] = title
+        else:
+            items['title'] = 'no title'
 
-        for url in links[20:30]:
-            items['url'] = url
-            items['publication'] = 'independent'
-            items['author'] = 'author'
-            items['story'] = 'story'
-            items['title'] = 'title'
-            yield items
+        # use 2 predicates together to single out the Author name
+        try:
+            items['author'] = response.xpath('//*[@id="articleHeader"]//a[contains(@href,"/author/")]/text()')[0].get()
+        except:
+            pass
+        items['story'] = story
+        items['url'] = url
 
-
+        yield items
+                
 # main driver
 if __name__ == '__main__':
     process = CrawlerProcess()
