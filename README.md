@@ -50,8 +50,10 @@ Scraping News Stories - Multiple Sources
 
     GRANT ALL PRIVILEGES ON newz.*  TO 'user1'@'%';
 
+#### XPATH selectors - some more advanced examples
 
-
+    response.xpath('//*[@id="articleHeader"]//a[contains(@href,"/author/")]/text()')[0].get()
+    response.xpath('//a[@class="title"][not(contains(@href,"https://www.independent.co.uk/vouchercodes"))]/@href')
 
 
 #### More to follow - Also : visit my web scraping and automation site : https://redandgreen.co.uk/
