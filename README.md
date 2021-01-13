@@ -9,7 +9,7 @@ Scraping News Stories - Multiple Sources
 
 ~~Plan : write 3 or more spiders - test with csv - then use pipelines to send items to database~~
 
-![View the YouTube Playlist for the entire project ](https://www.youtube.com/playlist?list=PLKMY3XNPiQ7u_ljiiDt1382T9T4xgLpRI)
+View the YouTube Playlist for the entire project (https://www.youtube.com/playlist?list=PLKMY3XNPiQ7u_ljiiDt1382T9T4xgLpRI)
 
 #### Objective : Multiple spiders using ONE items.py with MySQL database for consistent data 
 
