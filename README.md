@@ -5,17 +5,13 @@ Scraping News Stories - Multiple Sources
 - 'guardian'
 - 'express'
 
-#### Todo : finish all selectors, investigate why pipelines only work running as "scrapy crawl spdiername" and not as "python3 spidername.py"
-
-~~Plan : write 3 or more spiders - test with csv - then use pipelines to send items to database~~
-
 View the YouTube Playlist for the entire project (https://www.youtube.com/playlist?list=PLKMY3XNPiQ7u_ljiiDt1382T9T4xgLpRI)
 
 #### Objective : Multiple spiders using ONE items.py with MySQL database for consistent data 
 
 #### Check all potential news sites in Scrapy shell first
 
-#### Use scrapy shell's fetch (url, headers={})
+#### Use scrapy shell's fetch (url, headers={}) https://youtu.be/UaqSo7hlX9g
 
 *Also you can check with scrapy shell and curl*
 
